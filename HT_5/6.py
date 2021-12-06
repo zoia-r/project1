@@ -31,5 +31,5 @@ for i in range_new(1, 10):
     print(i)
 
 
-for i in range_new(10, 1, -2):
+for i in range_new(10, 0, -2):
     print(i)
