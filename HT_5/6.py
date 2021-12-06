@@ -6,8 +6,8 @@
 """
 
 
-def range_new(start, finish=0, step=1):
-    if finish == 0:
+def range_new(start, finish=None, step=1):
+    if finish == None:
         finish = start
         start = 0
     if step ==0:
