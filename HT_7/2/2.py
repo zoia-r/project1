@@ -19,21 +19,31 @@ def print_list(name, count_number):
         str1 = file.read()
         len_str1 = len(str1)
         if len_str1 < count_number*3:
-            print("Error")
+            res = []
+            n = ''
+            centre_position = len_str1 // 2 - count_number // 2
+            res.append(str1[:count_number])
+            res.append(str1[centre_position: centre_position + count_number])
+            res.append(str1[-count_number:])
+            n = '*' * count_number
+            res = n.join(res)
         else:
-            res = str1[:count_number]
             count_space = len_str1 - count_number*3
             count_space_r = (count_space)//2
             count_space_l = count_space - count_space_r
 
-            res += '*' * count_space_l
             temp = count_number + count_space_l
-            res += str1[temp: temp + count_number]
-            
+
+            res = str1[:count_number]
+            res += '*' * count_space_l
+        
+            res +=str1[temp: temp + count_number]
+           
             res += '*' * count_space_r
             res += str1[-count_number:]
-            print(res)
+        print(res)
 
 
-print_list('text1.txt', 3)
+print_list('text1.txt', 4)
+
 
