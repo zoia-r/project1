@@ -16,8 +16,11 @@
 
 def print_list(name, count_number):
     with open(name, "r") as file:
+        
         str1 = file.read()
         len_str1 = len(str1)
+        if len_str1 < n:
+            raise LimitCharsString()
         if len_str1 < count_number*3:
             res = []
             n = ''
